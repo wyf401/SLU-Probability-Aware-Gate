@@ -1,0 +1,642 @@
+- 实验结果记录
+- Intent Detection
+    - ATIS
+        - baseline BERT-joint
+            - batch_size = 32, epochs = 15, lr = 5e-5
+                - joint_acc: 86.90  intent_acc: 97.65  slot_f1:95.19
+            - batch_size = 32, epochs = 30, lr = 5e-5
+                - joint_acc: 87.91  intent_acc: 97.76  slot_f1:95.88
+                
+        - Partial data fine-tune
+            - Random sample, batch size = 32, epoch = 30, Joint Model
+                - 5 samples each intent class
+                    - joint_acc: 1.03, intent_acc: 29.27, slot_f1: 31.94
+                - 10 samples each intent class
+                    - joint_acc: 25.28, intent_acc: 69.82, slot_f1: 67.99
+                - 15 samples each intent class
+                    - joint_acc: 53.52, intent_acc: 91.15, slot_f1: 80.85
+                - 20 samples each intent class
+                    - joint_acc: 55.58, intent_acc: 96.36, slot_f1: 79.59
+                    
+            - Random sample, batch size = 32, epoch = 30, Intent Detection, Single Intent Dataset
+                - 1 samples each intent class
+                    - intent_acc: 10.94
+                - 2 samples each intent class
+                    - intent_acc: 18.11
+                - 3 samples each intent class
+                    - intent_acc: 18.91
+                - 4 samples each intent class
+                    - intent_acc: 31.55
+                - 5 samples each intent class
+                    - intent_acc: 46.24
+                - 6 samples each intent class
+                    - intent_acc: 59.57
+                - 7 samples each intent class
+                    - intent_acc: 70.50
+                - 8 samples each intent class
+                    - intent_acc: 72.44
+                - 9 samples each intent class
+                    - intent_acc: 86.56
+                - 10 samples each intent class
+                    - intent_acc: 87.70
+                - 15 samples each intent class
+                    - intent_acc: 93.74
+                - 20 samples each intent class
+                    - intent_acc: 97.49
+                - all samples
+                    - intent_acc: 98.86
+                
+        - Few-shot prompt - Intent Detection
+            - Random sample, batch size = 32, epoch = 30
+                - 1 samples each intent class
+                    - intent_acc: 81.21
+                - 2 samples each intent class
+                    - intent_acc: 74.60
+                - 3 samples each intent class
+                    - intent_acc: 81.09
+                - 4 samples each intent class
+                    - intent_acc: 77.33
+                - 5 samples each intent class
+                    - intent_acc: 85.76
+                - 6 samples each intent class
+                    - intent_acc: 85.19
+                - 7 samples each intent class
+                    - intent_acc: 90.09
+                - 8 samples each intent class
+                    - intent_acc: 89.64
+                - 9 samples each intent class
+                    - intent_acc: 87.36
+                - 10 samples each intent class
+                    - intent_acc: 90.21
+                - 15 samples each intent class
+                    - intent_acc: 93.39
+                - 20 samples each intent class
+                    - intent_acc: 96.70
+                - all samples
+                    - intent_acc: 98.29
+        
+        - Zero-shot prompt - Intent Detection
+            - intent_acc: 85.42
+    
+        - Few-shot prompt - Intent Detection + dynamic_sample
+            - Random sample, batch size = 32, epoch = 30
+                - 2 samples each intent class
+                    - intent_acc: 77.56
+                - 4 samples each intent class
+                    - intent_acc: 83.49
+                - 6 samples each intent class
+                    - intent_acc: 90.32
+                - 8 samples each intent class
+                    - intent_acc: 89.98
+                - 10 samples each intent class
+                    - intent_acc: 91.34
+        
+        - Few-shot BERT-Large - Intent Detection
+            - 2 samples each intent class
+                - intent_acc: 
+            - 4 samples each intent class
+                - intent_acc: 
+            - 6 samples each intent class
+                - intent_acc: 
+            - 8 samples each intent class
+                - intent_acc: 
+            - 10 samples each intent class
+                - intent_acc: 
+                
+        - Few-shot Prompt BERT-Large - Intent Detection
+            - 0 samples each intent class
+                - intent_acc: 69.02
+            - 2 samples each intent class
+                - intent_acc: 
+            - 4 samples each intent class
+                - intent_acc: 
+            - 6 samples each intent class
+                - intent_acc: 
+            - 8 samples each intent class
+                - intent_acc: 
+            - 10 samples each intent class
+                - intent_acc: 
+        
+        - Few-shot - bilstm 
+            - Random sample, batch size = 32, epoch = 150
+                - 2 samples each intent class
+                    - intent_acc: 
+                - 4 samples each intent class
+                    - intent_acc: 
+                - 6 samples each intent class
+                    - intent_acc: 
+                - 8 samples each intent class
+                    - intent_acc: 
+                - 10 samples each intent class
+                    - intent_acc: 
+        
+        - Few-shot - graph-lstm
+            - Random sample, batch size = 32, epoch = 150
+                - 2 samples each intent class
+                    - intent_acc: 
+                - 4 samples each intent class
+                    - intent_acc: 
+                - 6 samples each intent class
+                    - intent_acc: 
+                - 8 samples each intent class
+                    - intent_acc: 
+                - 10 samples each intent class
+                    - intent_acc: 
+        
+        - GPT2 - Intent detection
+            - 2 samples each intent class
+                - intent_acc: 23.23
+            - 4 samples each intent class
+                - intent_acc: 25.63
+            - 6 samples each intent class
+                - intent_acc: 36.45
+            - 8 samples each intent class
+                - intent_acc: 51.7
+            - 10 samples each intent class
+                - intent_acc: 81.55
+        
+        - Roberta - Intent detection
+            - 2 samples each intent class
+                - intent_acc: 
+            - 4 samples each intent class
+                - intent_acc: 
+            - 6 samples each intent class
+                - intent_acc: 
+            - 8 samples each intent class
+                - intent_acc: 74.83
+            - 10 samples each intent class
+                - intent_acc: 
+        
+    - Snips
+        - baseline BERT-joint
+            - batch_size = 32, epochs = 15, lr = 5e-5
+                - joint_acc: 91.71  intent_acc: 98.29  slot_f1: 96.19
+            - batch_size = 32, epochs = 30, lr = 5e-5
+                - joint_acc: 91.29  intent_acc: 98.14  slot_f1: 96.29
+        - with gate mechanism
+            - batch_size = 32, epochs = 30, lr = 5e-5
+            - joint_acc: 92.57 intent_acc: 98.71  slot_f1: 97.00
+            
+        - Partial data fine-tune
+            - Random sample, batch size = 32, epoch = 30, Joint Model
+                - 5 samples each intent class
+                    - joint_acc: 0, intent_acc: 72.29, slot_f1: 0
+                - 10 samples each intent class
+                    - joint_acc: 0.57, intent_acc: 84.57, slot_f1: 15.99
+                - 15 samples each intent class
+                    - intent_acc: 4.43, intent_acc: 90.43, slot_f1: 37.38
+                - 20 samples each intent class
+                    - joint_acc: 22.14, intent_acc: 93.57, slot_f1: 55.48
+            
+            - Random sample, batch size = 32, epoch = 30, Intent Detection
+                - 1 samples each intent class
+                    - intent_acc: 33.29
+                - 2 samples each intent class
+                    - intent_acc: 59.29
+                - 3 samples each intent class
+                    - intent_acc: 70.86
+                - 4 samples each intent class
+                    - intent_acc: 78.71
+                - 5 samples each intent class
+                    - intent_acc: 79.71
+                - 6 samples each intent class
+                    - intent_acc: 82.29
+                - 7 samples each intent class
+                    - intent_acc: 83.57
+                - 8 samples each intent class
+                    - intent_acc: 86.71
+                - 9 samples each intent class
+                    - intent_acc: 87.00
+                - 10 samples each intent class
+                    - intent_acc: 87.86
+                - 15 samples each intent class
+                    - intent_acc: 91.43
+                - 20 samples each intent class
+                    - intent_acc: 92.14
+                - all samples
+                    - intent_acc: 96.57
+                
+        - Few-shot prompt - Intent Detection
+            - Random sample, batch size = 32, epoch = 30
+                - 1 samples each intent class
+                    - intent_acc: 83.00
+                - 2 samples each intent class
+                    - intent_acc: 81.29
+                - 3 samples each intent class
+                    - intent_acc: 84.71
+                - 4 samples each intent class
+                    - intent_acc: 87.86
+                - 5 samples each intent class
+                    - intent_acc: 86.43
+                - 6 samples each intent class
+                    - intent_acc: 86.29
+                - 7 samples each intent class
+                    - intent_acc: 88.43
+                - 8 samples each intent class
+                    - intent_acc: 89.43
+                - 9 samples each intent class
+                    - intent_acc: 90.43
+                - 10 samples each intent class
+                    - intent_acc: 90.71
+                - 15 samples each intent class
+                    - intent_acc: 92.00
+                - 20 samples each intent class
+                    - intent_acc: 92.57
+                - all samples
+                    - intent_acc: 97.14
+        
+        - Few-shot prompt - Intent Detection + dynamic_sample
+            - Random sample, batch size = 32, epoch = 30
+                - 2 samples each intent class
+                    - intent_acc: 83.57
+                - 4 samples each intent class
+                    - intent_acc: 83.57
+                - 6 samples each intent class
+                    - intent_acc: 88.71
+                - 8 samples each intent class
+                    - intent_acc: 90.29
+                - 10 samples each intent class
+                    - intent_acc: 90.29
+        
+        - Zero-shot prompt - Intent Detection
+            - intent_acc: 79.57
+        
+        - Few-shot BERT-Large - Intent Detection
+            - 0 samples each intent class
+                - intent_acc: 77.71
+            - 2 samples each intent class
+                - intent_acc: 
+            - 4 samples each intent class
+                - intent_acc: 
+            - 6 samples each intent class
+                - intent_acc: 
+            - 8 samples each intent class
+                - intent_acc: 
+            - 10 samples each intent class
+                - intent_acc: 
+                
+        - Few-shot Prompt BERT-Large - Intent Detection
+            - 2 samples each intent class
+                - intent_acc: 
+            - 4 samples each intent class
+                - intent_acc: 
+            - 6 samples each intent class
+                - intent_acc: 
+            - 8 samples each intent class
+                - intent_acc: 
+            - 10 samples each intent class
+                - intent_acc: 
+        
+        - GPT2 - Intent detection
+            - 2 samples each intent class
+                - intent_acc: 33.43
+            - 4 samples each intent class
+                - intent_acc: 53.71
+            - 6 samples each intent class
+                - intent_acc: 73.86
+            - 8 samples each intent class
+                - intent_acc: 70
+            - 10 samples each intent class
+                - intent_acc: 80.14
+        
+        
+            
+    - 结论
+        - 1. prompt tuning　收敛更快(6 epoch 对比 fine-tune 20+ epoch)
+        - 2. 训练时避免使用Sequential Sampler
+    
+    
+- Slot Filling
+    - ATIS
+        - BERT only entity type
+            - fewshot-5
+                - slot_acc: 71.08, slot_f1: 28.33
+            - fewshot-10
+                - slot_acc: 78.31, slot_f1: 47.97
+            - fewshot-20
+                - slot_acc: 90.21, slot_f1: 77.94
+            - fewshot-30
+                - slot_acc: 95.00, slot_f1: 87.50
+            - fewshot-40
+                - slot_acc: 96.36, slot_f1: 91.29
+            - all data
+                - slot_acc: 98.04, slot_f1: 95.49
+                
+        - BERT only entity type + focal loss
+            - fewshot-5
+                - slot_acc: 71.38, slot_f1: 29.26
+            - fewshot-10
+                - slot_acc: 79.32, slot_f1: 49.36
+            - fewshot-20
+                - slot_acc: 92.28, slot_f1: 82.01
+            - fewshot-30
+                - slot_acc: 95.73, slot_f1: 89.93
+            - fewshot-40
+                - slot_acc: 96.55, slot_f1: 91.90
+            - all data
+                - slot_acc: , slot_f1: 
+                
+        - BERT only entity type + focal loss + dynamic_sample
+            - fewshot-5
+                - slot_acc: 71.38, slot_f1: 29.26
+            - fewshot-10
+                - slot_acc: 85.24, slot_f1: 62.76
+            - fewshot-20
+                - slot_acc: 94.12, slot_f1: 85.57
+            - fewshot-30
+                - slot_acc: 96.09, slot_f1: 90.65
+            - fewshot-40
+                - slot_acc: 96.76, slot_f1: 92.01
+            
+        - BERT BIO
+            - fewshot-5
+                - slot_acc: 68.51, slot_f1: 22.21
+            - fewshot-10
+                - slot_acc: 76.94, slot_f1: 41.21
+            - fewshot-20
+                - slot_acc: 86.40, slot_f1: 66.23
+            - fewshot-30
+                - slot_acc: 91.05, slot_f1: 78.04
+            - fewshot-40
+                - slot_acc: 93.88, slot_f1: 82.11
+            - all data
+                - slot_acc: 98.17, slot_f1: 95.70
+        
+        - GPT2 BIO
+            - fewshot-5
+                -  slot_f1: 19.62
+            - fewshot-10
+                -  slot_f1: 35.44
+            - fewshot-20
+                -  slot_f1: 51.82
+            - fewshot-30
+                -  slot_f1: 62.69
+            - fewshot-40
+                -  slot_f1: 66.69
+        
+        - GPT2 ET
+            - fewshot-5
+                -  slot_f1: 23.41
+            - fewshot-10
+                -  slot_f1: 42.41
+            - fewshot-20
+                -  slot_f1: 52.93
+            - fewshot-30
+                -  slot_f1: 64.96
+            - fewshot-40
+                -  slot_f1: 70.61
+                
+        - GPT2 ET + FL
+            - fewshot-5
+                -  slot_f1: 
+            - fewshot-10
+                -  slot_f1: 
+            - fewshot-20
+                -  slot_f1: 
+            - fewshot-30
+                -  slot_f1: 
+            - fewshot-40
+                -  slot_f1: 
+        
+        - RoBERTa BIO
+            - fewshot-5
+                -  slot_f1: 31.51
+            - fewshot-10
+                -  slot_f1: 59.89
+            - fewshot-20
+                -  slot_f1: 77.03
+            - fewshot-30
+                -  slot_f1: 83.46
+            - fewshot-40
+                -  slot_f1: 87.39
+        
+        - RoBERTa ET
+            - fewshot-5
+                -  slot_f1: 29.11
+            - fewshot-10
+                -  slot_f1: 65.24
+            - fewshot-20
+                -  slot_f1: 84.07
+            - fewshot-30
+                -  slot_f1: 89.53
+            - fewshot-40
+                -  slot_f1: 88.65
+                
+        - RoBERTa ET + FL
+            - fewshot-5
+                -  slot_f1: 29.08
+            - fewshot-10
+                -  slot_f1: 65
+            - fewshot-20
+                -  slot_f1: 80.95
+            - fewshot-30
+                -  slot_f1: 85.61
+            - fewshot-40
+                -  slot_f1: 86.78
+        
+        - gamma　参数分析
+            - gamma = 0.25
+                - fewshot-5
+                    - {'slot_acc': 0.7142377058362271, 'slot_f1': 0.2920835527470599}
+                - fewshot-10
+                    - {'slot_acc': 0.8006049064635375, 'slot_f1': 0.5180806675938804}
+                - fewshot-20
+                    - {'slot_acc': 0.9199059034390052, 'slot_f1': 0.8135653409090908}
+                - fewshot-30
+                    - {'slot_acc': 0.9542959560882716, 'slot_f1': 0.8880918220946916}
+                - fewshot-40
+                    - {'slot_acc': 0.9622493558866361, 'slot_f1': 0.9112830664027353}
+                    
+            - gamma = 0.5
+                - fewshot-5
+                    - {'slot_acc': 0.7137896269743474, 'slot_f1': 0.2925541277944024}
+                - fewshot-10
+                    - {'slot_acc': 0.7932116052425227, 'slot_f1': 0.4935741576936436}
+                - fewshot-20
+                    - {'slot_acc': 0.9228184160412233, 'slot_f1': 0.8200568990042674}
+                - fewshot-30
+                    - {'slot_acc': 0.9573204884059594, 'slot_f1': 0.8992637816484107}
+                - fewshot-40
+                    - {'slot_acc': 0.9654979276352638, 'slot_f1': 0.9189773136478213}
+                
+            - gamma = 1
+                - fewshot-5
+                    - {'slot_acc': 0.723087263358351, 'slot_f1': 0.319915626647917}
+                - fewshot-10
+                    - {'slot_acc': 0.8008289458944774, 'slot_f1': 0.5139058947000175}
+                - fewshot-20
+                    - {'slot_acc': 0.9178895485605466, 'slot_f1': 0.8063886424134872}
+                - fewshot-30
+                    - {'slot_acc': 0.9511594040551137, 'slot_f1': 0.881701215153681}
+                - fewshot-40  
+                    - {'slot_acc': 0.9600089615772376, 'slot_f1': 0.9061209836654103}
+            - gamma = 2
+                - fewshot-5
+                    - {'slot_acc': 0.7256637168141593, 'slot_f1': 0.3248856036606829}
+                - fewshot-10
+                    - {'slot_acc': 0.8128150554497592, 'slot_f1': 0.5520504731861199}
+                - fewshot-20
+                    - {'slot_acc': 0.9075837347373138, 'slot_f1': 0.7837357954545454}
+                - fewshot-30
+                    - {'slot_acc': 0.947910832306486, 'slot_f1': 0.871840831690267}
+                - fewshot-40       
+                    - {'slot_acc': 0.9639296516186849, 'slot_f1': 0.9134736463392696}
+            - gamma = 4
+                - fewshot-5
+                    - {'slot_acc': 0.7256637168141593, 'slot_f1': 0.3227056543949269}
+                - fewshot-10
+                    - {'slot_acc': 0.8020611627646466, 'slot_f1': 0.5264075300679798}
+                - fewshot-20
+                    - {'slot_acc': 0.8966058026212613, 'slot_f1': 0.7564969740121039}
+                - fewshot-30
+                    - {'slot_acc': 0.9240506329113924, 'slot_f1': 0.8209700427960058}
+                - fewshot-40
+                    - {'slot_acc': 0.9489190097457152, 'slot_f1': 0.8760242251514071}         
+    - Snips
+        - BERT only entity type
+            - fewshot-5
+                - slot_acc: 55.15, slot_f1: 12.26
+            - fewshot-10
+                - slot_acc: 76.77, slot_f1: 57.75
+            - fewshot-20
+                - slot_acc: 86.34, slot_f1: 76.26
+            - fewshot-30
+                - slot_acc: 88.86, slot_f1: 80.11
+            - fewshot-40
+                - slot_acc: 90.46, slot_f1: 83.07
+            - all data
+                - slot_acc: 97.75, slot_f1: 96.07
+                
+        - BERT only entity type + focal loss
+            - fewshot-5
+                - slot_acc: 57.38, slot_f1: 15.54
+            - fewshot-10
+                - slot_acc: 78.38, slot_f1: 60.81
+            - fewshot-20(gamma=0.1)
+                - slot_acc: 86.56, slot_f1: 76.69
+            - fewshot-30
+                - slot_acc: 88.53, slot_f1: 79.93
+            - fewshot-40(gamma=0.25)
+                - slot_acc: 90.02, slot_f1: 83.06
+            - all data
+                - slot_acc: , slot_f1: 
+        
+        - BERT only entity type + focal loss + dynamic_sample
+            - fewshot-5
+                - slot_acc: 57.38, slot_f1: 15.54
+            - fewshot-10
+                - slot_acc: 77.4,  slot_f1: 59.11
+            - fewshot-20
+                - slot_acc: 88.97, slot_f1: 80.03
+            - fewshot-30
+                - slot_acc: 91.45, slot_f1: 84.56
+            - fewshot-40
+                - slot_acc: 92.21, slot_f1: 85.52
+        
+        - BERT BIO
+            - fewshot-5
+                - slot_acc: 50.36, slot_f1:   1.8
+            - fewshot-10
+                - slot_acc: 69.07, slot_f1: 41.98
+            - fewshot-20
+                - slot_acc: 85.84, slot_f1: 69.63
+            - fewshot-30
+                - slot_acc: 87.47, slot_f1: 75.46
+            - fewshot-40
+                - slot_acc: 90.16, slot_f1: 80.38
+            - all data
+                - slot_acc: 97.61, slot_f1: 96.22
+        
+        - RoBERTa BIO
+            - fewshot-5
+                -  slot_f1: 22.42
+            - fewshot-10
+                -  slot_f1: 42.33
+            - fewshot-20
+                -  slot_f1: 65.42
+            - fewshot-30
+                -  slot_f1: 73.63
+            - fewshot-40
+                -  slot_f1: 77.28
+        
+        - RoBERTa ET
+            - fewshot-5
+                -  slot_f1: 14.35
+            - fewshot-10
+                -  slot_f1: 54.39
+            - fewshot-20
+                -  slot_f1: 67.59
+            - fewshot-30
+                -  slot_f1: 74.61
+            - fewshot-40
+                -  slot_f1: 77.61
+                
+        - RoBERTa ET + FL
+            - fewshot-5
+                -  slot_f1: 24.10
+            - fewshot-10
+                -  slot_f1: 49.58
+            - fewshot-20
+                -  slot_f1: 68.25
+            - fewshot-30
+                -  slot_f1: 76.25
+            - fewshot-40
+                -  slot_f1: 78.16
+        
+        - gamma　参数分析
+            - gamma = 0.25
+                - fewshot-5
+                    - {'slot_acc': 0.5690903367957192, 'slot_f1': 0.15288713910761154}
+                - fewshot-10
+                    - {'slot_acc': 0.7777777777777778, 'slot_f1': 0.5961032122169564}
+                - fewshot-20
+                    - {'slot_acc': 0.8572552722694365, 'slot_f1': 0.7518150040333424}
+                - fewshot-30
+                    - {'slot_acc': 0.8810198300283286, 'slot_f1': 0.7968495382944052}
+                - fewshot-40
+                    - {'slot_acc': 0.9002203336480957, 'slot_f1': 0.8306100217864923}
+            - gamma = 0.5
+                - fewshot-5
+                    - {'slot_acc': 0.5738117721120554, 'slot_f1': 0.1553461163470913}
+                - fewshot-10
+                    - {'slot_acc': 0.7837582625118036, 'slot_f1': 0.608050847457627}
+                - fewshot-20
+                    - {'slot_acc': 0.8581995593327038, 'slot_f1': 0.7508696815627509}
+                - fewshot-30
+                    - {'slot_acc': 0.8852691218130312, 'slot_f1': 0.7993465831745168}
+                - fewshot-40
+                    - {'slot_acc': 0.893610324205225, 'slot_f1': 0.8099128540305011}
+                    
+            - gamma = 1
+                - fewshot-5
+                    - {'slot_acc': 0.5739691532892666, 'slot_f1': 0.159331834243495}
+                - fewshot-10
+                    - {'slot_acc': 0.7810827824992131, 'slot_f1': 0.6048109965635738}
+                - fewshot-20
+                    - {'slot_acc': 0.8593012275731823, 'slot_f1': 0.7563070316693506}
+                - fewshot-30
+                    - {'slot_acc': 0.882908404154863, 'slot_f1': 0.7939097335508429}
+                - fewshot-40  
+                    - {'slot_acc': 0.8921938936103242, 'slot_f1': 0.8065217391304349}
+            - gamma = 2
+                - fewshot-5
+                    - {'slot_acc': 0.573497009757633, 'slot_f1': 0.16226783968719452}
+                - fewshot-10
+                    - {'slot_acc': 0.784073024866226, 'slot_f1': 0.615547890687185}
+                - fewshot-20
+                    - {'slot_acc': 0.846868114573497, 'slot_f1': 0.7258666666666668}
+                - fewshot-30
+                    - {'slot_acc': 0.8791312559017942, 'slot_f1': 0.7828911748781808}
+                - fewshot-40       
+                    - {'slot_acc': 0.8967579477494492, 'slot_f1': 0.8126018468223792}
+            - gamma = 4
+                - fewshot-5
+                    - {'slot_acc': 0.5657853320742839, 'slot_f1': 0.16772823779193205}
+                - fewshot-10
+                    - {'slot_acc': 0.7730563424614416, 'slot_f1': 0.5934591863865993}
+                - fewshot-20
+                    - {'slot_acc': 0.8385269121813032, 'slot_f1': 0.7062617575920451}
+                - fewshot-30
+                    - {'slot_acc': 0.874409820585458, 'slot_f1': 0.7787804211101996}
+                - fewshot-40     
+                    - {'slot_acc': 0.8893610324205226, 'slot_f1': 0.799347471451876}

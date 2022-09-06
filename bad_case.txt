@@ -1,0 +1,110 @@
+find on dress parade
+Intent prediction: SearchCreativeWork . Intent label: SearchScreeningEvent .
+Slot pred : O O B-object_name I-object_name 
+Slot label: O B-movie_name I-movie_name I-movie_name 
+
+in one hour find king of hearts
+Intent prediction: SearchCreativeWork . Intent label: SearchScreeningEvent .
+Slot pred : B-timeRange I-timeRange I-timeRange O B-object_name I-object_name I-object_name 
+Slot label: B-timeRange I-timeRange I-timeRange O B-movie_name I-movie_name I-movie_name 
+
+play the new noise theology e p
+Intent prediction: PlayMusic . Intent label: SearchCreativeWork .
+Slot pred : O O B-sort I-playlist I-album I-album I-track 
+Slot label: O B-object_name I-object_name I-object_name I-object_name I-object_name I-object_name 
+
+find now and forever
+Intent prediction: SearchCreativeWork . Intent label: SearchScreeningEvent .
+Slot pred : O B-object_name I-object_name I-object_name 
+Slot label: O B-movie_name I-movie_name I-movie_name 
+
+what is dear old girl cooper foundation
+Intent prediction: SearchCreativeWork . Intent label: SearchScreeningEvent .
+Slot pred : O O B-object_name I-object_name I-object_name I-object_name I-object_name 
+Slot label: O O B-movie_name I-movie_name I-movie_name B-location_name I-location_name 
+
+when is crime and punishment u s a showing
+Intent prediction: SearchCreativeWork . Intent label: SearchScreeningEvent .
+Slot pred : O O B-object_name I-object_name I-object_name I-object_name I-object_name O B-object_type 
+Slot label: O O B-movie_name I-movie_name I-movie_name I-movie_name I-movie_name I-movie_name O 
+
+turn on spotify to tiny tim ep
+Intent prediction: AddToPlaylist . Intent label: PlayMusic .
+Slot pred : O O B-service O B-artist I-artist B-music_item 
+Slot label: O O B-service O B-artist I-artist B-music_item 
+
+play the discografia de the pretty reckless saga
+Intent prediction: PlayMusic . Intent label: SearchCreativeWork .
+Slot pred : O O B-object_name I-object_name I-object_name I-object_name I-object_name B-object_type 
+Slot label: O O B-object_name I-object_name I-object_name I-object_name I-object_name B-object_type 
+
+i need a table in uruguay in 213 days when it s chillier
+Intent prediction: BookRestaurant . Intent label: GetWeather .
+Slot pred : O O O O O B-country B-timeRange I-timeRange I-timeRange O O O B-condition_temperature 
+Slot label: O O O O O B-country B-timeRange I-timeRange I-timeRange O O O B-condition_temperature 
+
+plan an album by roni duani
+Intent prediction: SearchCreativeWork . Intent label: PlayMusic .
+Slot pred : O O B-music_item O B-artist I-artist 
+Slot label: O O B-music_item O B-artist I-artist 
+
+find heat wave
+Intent prediction: SearchCreativeWork . Intent label: SearchScreeningEvent .
+Slot pred : O B-object_name I-object_name 
+Slot label: O B-movie_name I-movie_name 
+
+need to see mother joan of the angels in one second
+Intent prediction: SearchCreativeWork . Intent label: SearchScreeningEvent .
+Slot pred : O O O B-object_name I-object_name I-object_name I-object_name I-object_name B-timeRange I-timeRange I-timeRange 
+Slot label: O O O B-movie_name I-movie_name I-movie_name I-movie_name I-movie_name B-timeRange I-timeRange I-timeRange 
+
+i want to go see the trouble with girls
+Intent prediction: SearchCreativeWork . Intent label: SearchScreeningEvent .
+Slot pred : O O O O O B-object_name I-object_name I-object_name I-object_name 
+Slot label: O O O O O B-movie_name I-movie_name I-movie_name I-movie_name 
+
+i d like to watch take this waltz
+Intent prediction: SearchCreativeWork . Intent label: SearchScreeningEvent .
+Slot pred : O O O O O B-object_name I-object_name I-object_name 
+Slot label: O O O O O B-movie_name I-movie_name I-movie_name 
+
+i d like to watch may blossom
+Intent prediction: SearchCreativeWork . Intent label: SearchScreeningEvent .
+Slot pred : O O O O O B-object_name I-object_name 
+Slot label: O O O O O B-movie_name I-movie_name 
+
+i d like to watch wish you were dead
+Intent prediction: SearchCreativeWork . Intent label: SearchScreeningEvent .
+Slot pred : O O O O O B-object_name I-object_name I-object_name I-object_name 
+Slot label: O O O O O B-movie_name I-movie_name I-movie_name I-movie_name 
+
+i d like to watch apocalypse 2024
+Intent prediction: SearchCreativeWork . Intent label: SearchScreeningEvent .
+Slot pred : O O O O O B-object_name I-object_name 
+Slot label: O O O O O B-movie_name I-movie_name 
+
+play the album how insensitive
+Intent prediction: SearchCreativeWork . Intent label: PlayMusic .
+Slot pred : O O B-object_type B-object_name I-object_name 
+Slot label: O O B-music_item B-album I-album 
+
+i need the wather for next week in the philippines
+Intent prediction: BookRestaurant . Intent label: GetWeather .
+Slot pred : O O O O O B-timeRange I-timeRange O O B-country 
+Slot label: O O O O O B-timeRange I-timeRange O O B-country 
+
+find the panic in needle park
+Intent prediction: SearchCreativeWork . Intent label: SearchScreeningEvent .
+Slot pred : O B-object_name I-object_name I-object_name I-object_name I-object_name 
+Slot label: O B-movie_name I-movie_name I-movie_name I-movie_name I-movie_name 
+
+play the album journeyman
+Intent prediction: PlayMusic . Intent label: SearchCreativeWork .
+Slot pred : O O B-music_item B-object_name 
+Slot label: O O B-object_type B-object_name 
+
+where can i see a slice of life
+Intent prediction: SearchCreativeWork . Intent label: SearchScreeningEvent .
+Slot pred : O O O O B-object_name I-object_name I-object_name I-object_name 
+Slot label: O O O O B-movie_name I-movie_name I-movie_name I-movie_name 
+
